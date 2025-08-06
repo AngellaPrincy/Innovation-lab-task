@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 3: Destructuring and Spread</title>
+</head>
+<body>
+  <h2>Object Destructuring & Spread (Check Console)</h2>
+  <button onclick="runDestructuringTask()">Run Task 3</button>
+
+  <script>
+    function runDestructuringTask() {
+      const person = {
+        name: "Angella Princy",
+        age: 19,
+        city: "Coimbatore"
+      };
+
+      const { name, age, city } = person;
+      console.log("Destructured →", name, age, city);
+
+      const user = {
+        username: "Princ_2013",
+        email: "angella@example.com"
+      };
+
+      const { username, email, phone = "Not Provided" } = user;
+      console.log("With Default →", username, email, phone);
+
+      const employee = {
+        empName: "Princy",
+        department: "Sales",
+        address: {
+          street: "Robert Road",
+          city: "Coimbatore"
+        }
+      };
+
+      const {
+        empName,
+        address: { city: empCity }
+      } = employee;
+      console.log("Nested Destructuring →", empName, empCity);
+
+      const obj1 = { a: 1, b: 2 };
+      const obj2 = { b: 3, c: 4 };
+
+      const clone = { ...obj1 };
+      console.log("Cloned Object →", clone);
+
+      const merged = { ...obj1, ...obj2 };
+      console.log("Merged Object →", merged);
+    }
+  </script>
+</body>
+</html>
